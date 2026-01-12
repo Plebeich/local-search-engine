@@ -1,4 +1,18 @@
-# example values
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: name
+    password: pass
+    url: url
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 indexing-settings:
   sites:
@@ -8,3 +22,4 @@ indexing-settings:
       name: Skillbox
     - url: https://www.playback.ru
       name: PlayBack.Ru
+

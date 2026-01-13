@@ -46,10 +46,10 @@ public class StatisticsServiceImpl implements StatisticsService {
             item.setUrl(site.getUrl());
 
             ModelSite modelSite = siteRepository.findByUrl(site.getUrl());
-            if (modelSite == null){
+            if (modelSite != null){
                 item.setStatus(modelSite.getStatus().toString());
                 item.setStatusTime(modelSite.getStatusTime());
-                item.setError(modelSite.getLastError());
+                item.setError(modelSite.getLastError() != null ? modelSite.getLastError() : "");
                 item.setPages(pageRepository.countBySite(modelSite));
                 item.setLemmas(lemmaRepository.countBySite(modelSite));
             }
